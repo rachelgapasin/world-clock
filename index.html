@@ -11,33 +11,40 @@
   <body>
     <div class="container">
       <h1>World Clock</h1>
-      <select name="" id="cities">
+
+      <select name="" id="cities-select">
         <option value="">Select a city</option>
-        <option value="">Los Angeles</option>
-        <option value="">Seoul</option>
-        <option value="">Tokyo</option>
+        <option value="Pacific/Honolulu">Honolulu</option>
+        <option value="Europe/London">London</option>
+        <option value="America/Los_Angeles">Los Angeles</option>
+        <option value="Asia/Seoul">Seoul</option>
       </select>
-      <div class="city" id="new-york">
-        <div>
-          <h2>New York 🇺🇸</h2>
-          <div class="date"></div>
+
+      <div id="cities">
+        <div class="city" id="new-york">
+          <div>
+            <h2>New York</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time"></div>
-      </div>
-      <div class="city" id="manila">
-        <div>
-          <h2>Manila 🇵🇭</h2>
-          <div class="date"></div>
+        <div class="city" id="manila">
+          <div>
+            <h2>Manila</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time"></div>
       </div>
     </div>
+
     <footer>
       <a href="https://github.com/rachelgapasin/world-clock" target="_blank"
         >Open-source code</a
       >
       by
       <a href="mailto:gapasinrachel@gmail.com">Rachel Gapasin</a>
+      👩🏽‍💻
     </footer>
 
     <script src="javascript/index.js"></script>
