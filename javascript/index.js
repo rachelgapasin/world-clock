@@ -37,28 +37,30 @@ function showTime() {
 }
 
 function updateCity(event) {
-  let cityTimeZone = event.target.value;
+  setInterval(function () {
+    let cityTimeZone = event.target.value;
 
-  if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
-  }
+    if (cityTimeZone === "current") {
+      cityTimeZone = moment.tz.guess();
+    }
 
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(cityTimeZone);
-  let cityElement = document.querySelector("#cities");
-  cityElement.innerHTML = `
-    <div class="city">
-      <div>
-        <h2 class="name">${cityName}</h2>
-        <div class="date">
-          ${cityTime.format("MMMM Do YYYY")}
+    let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+    let cityTime = moment().tz(cityTimeZone);
+    let cityElement = document.querySelector("#cities");
+    cityElement.innerHTML = `
+      <div class="city">
+        <div>
+          <h2 class="name">${cityName}</h2>
+          <div class="date">
+            ${cityTime.format("MMMM Do YYYY")}
+          </div>
+        </div>
+        <div class="time">
+          ${cityTime.format("h:mm:ss [<small>]A[</small>]")}
         </div>
       </div>
-      <div class="time">
-        ${cityTime.format("h:mm:ss [<small>]A[</small>]")}
-      </div>
-    </div>
-    <a href="/" id="default-cities-link">Show default cities</a>`;
+      <a href="/" id="default-cities-link">Show default cities</a>`;
+  }, 1000);
 }
 
 showTime();
