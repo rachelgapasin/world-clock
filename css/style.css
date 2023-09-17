@@ -1,5 +1,6 @@
 body {
   background: #dedad6;
+  color: #33312f;
   font-family: sans-serif;
 }
 
@@ -16,6 +17,7 @@ select {
   background: #f6f3f1;
   border-color: #45423f;
   border-radius: 5px;
+  color: #45423f;
   font-size: 20px;
   margin-bottom: 10px;
   padding: 10px;
@@ -48,19 +50,30 @@ a {
   border: none;
 }
 
+.name {
+  font-size: 28px;
+}
+
 .date {
   color: #777470;
+  font-size: 18px;
   margin: 10px 0;
 }
 
 .time {
-  font-size: 36px;
+  font-size: 49px;
   font-weight: bold;
 }
 
 .time small {
   font-size: 18px;
   vertical-align: middle;
+}
+
+#default-cities-link {
+  font-weight: normal;
+  position: relative;
+  top: 10px;
 }
 
 footer {

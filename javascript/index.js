@@ -49,7 +49,7 @@ function updateCity(event) {
   cityElement.innerHTML = `
     <div class="city">
       <div>
-        <h2>${cityName}</h2>
+        <h2 class="name">${cityName}</h2>
         <div class="date">
           ${cityTime.format("MMMM Do YYYY")}
         </div>
@@ -58,7 +58,7 @@ function updateCity(event) {
         ${cityTime.format("h:mm:ss [<small>]A[</small>]")}
       </div>
     </div>
-    <a href="index.html">Show default cities</a>`;
+    <a href="/" id="default-cities-link">Show default cities</a>`;
 }
 
 showTime();
