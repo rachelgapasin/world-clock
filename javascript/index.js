@@ -1,4 +1,16 @@
 function showTime() {
+  // Manila date and time
+  let manilaElement = document.querySelector("#manila");
+  if (manilaElement) {
+    let manilaDateElement = manilaElement.querySelector(".date");
+    let manilaTimeElement = manilaElement.querySelector(".time");
+    let manilaTime = moment().tz("Asia/Manila");
+    manilaDateElement.innerHTML = manilaTime.format("MMMM Do YYYY");
+    manilaTimeElement.innerHTML = manilaTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
   // New York date and time
   let newYorkElement = document.querySelector("#new-york");
   if (newYorkElement) {
@@ -11,14 +23,14 @@ function showTime() {
     );
   }
 
-  // Manila date and time
-  let manilaElement = document.querySelector("#manila");
-  if (manilaElement) {
-    let manilaDateElement = manilaElement.querySelector(".date");
-    let manilaTimeElement = manilaElement.querySelector(".time");
-    let manilaTime = moment().tz("Asia/Manila");
-    manilaDateElement.innerHTML = manilaTime.format("MMMM Do YYYY");
-    manilaTimeElement.innerHTML = manilaTime.format(
+  // Paris date and time
+  let parisElement = document.querySelector("#paris");
+  if (parisElement) {
+    let parisDateElement = parisElement.querySelector(".date");
+    let parisTimeElement = parisElement.querySelector(".time");
+    let parisTime = moment().tz("Europe/Paris");
+    parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
+    parisTimeElement.innerHTML = parisTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
@@ -38,10 +50,15 @@ function updateCity(event) {
     <div class="city">
       <div>
         <h2>${cityName}</h2>
-        <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+        <div class="date">
+          ${cityTime.format("MMMM Do YYYY")}
+        </div>
       </div>
-      <div class="time">${cityTime.format("h:mm:ss [<small>]A[</small>]")}</div>
-    </div>`;
+      <div class="time">
+        ${cityTime.format("h:mm:ss [<small>]A[</small>]")}
+      </div>
+    </div>
+    <a href="index.html">Show default cities</a>`;
 }
 
 showTime();
