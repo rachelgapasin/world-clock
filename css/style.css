@@ -76,8 +76,10 @@ select:focus {
 }
 
 #default-cities-link {
+  color: #45423f;
   font-weight: normal;
   position: relative;
+  text-decoration: none;
   top: 10px;
 }
 
